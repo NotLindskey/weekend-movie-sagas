@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { useHistory } from 'react-router-dom';
+
 import './MovieList.css'
 
 function MovieList() {
@@ -11,10 +14,14 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+    const history = useHistory();
+
+
     // click to details page
-    const handleClick = (event) => {
-        console.log('poster clicked!')
-        // dispatch({ type:})
+    const routeDetails = (event) => {
+        alert('Route to Details');
+        history.push('/details');
+        
     }
 
     return (
@@ -25,7 +32,7 @@ function MovieList() {
                     return (
                         <div key={movie.id} >
                             <h3>{movie.title}</h3>
-                            <img src={movie.poster} alt={movie.title} onClick={handleClick}/>
+                            <img src={movie.poster} alt={movie.title} onClick={routeDetails}/>
                         </div>
                     );
                 })}
@@ -36,3 +43,19 @@ function MovieList() {
 }
 
 export default MovieList;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Reminder -
+// It's ok, it's only one minute, you'll feel better in 5. 
