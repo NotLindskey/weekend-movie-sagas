@@ -18,21 +18,22 @@ function MovieList() {
 
 
     // click to details page
-    const routeDetails = (event) => {
-        alert('Route to Details');
+    const handleClick = (movie) => {
+        alert(`you clicked ${movie.title}!`);
         history.push('/details');
         
     }
 
     return (
         <main>
+            {/* {JSON.stringify(movies)} */}
             <h1>MovieList</h1>
             <section className="movies">
                 {movies.map(movie => {
                     return (
                         <div key={movie.id} >
                             <h3>{movie.title}</h3>
-                            <img src={movie.poster} alt={movie.title} onClick={routeDetails}/>
+                            <img src={movie.poster} alt={movie.title} onClick={() => handleClick(movie)}/>
                         </div>
                     );
                 })}
