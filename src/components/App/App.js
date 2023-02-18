@@ -8,6 +8,9 @@ import MovieList from '../MovieList/MovieList';
 // import from Details
 import Details from '../Details/Details';
 
+// import from AddMovie />
+import AddMovie from '../AddMovie/AddMovie';
+
 function App() {
 	return (
 		<Router>
