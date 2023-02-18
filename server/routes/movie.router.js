@@ -16,10 +16,11 @@ router.get('/', (req, res) => {
 });
 
 // get by id.
-router.get('/:id', (req, res) => {
+router.get('/movie/:id', (req, res) => {
+	console.log(req);
 	const query = 'SELECT * FROM movies WHERE "id"=$1';
 	pool
-		.query(query)
+		.query(query, [])
 		.then((result) => {
 			res.send(result.rows);
 		})
