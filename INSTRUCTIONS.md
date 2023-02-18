@@ -49,14 +49,21 @@ This view is completed already! It displays all of the movies in the movie datab
 - TODO:
   [x] - When a movie poster is clicked,
   [x] - a user should be brought to the `/details`  
-  [] - view details for that movie.
+  [x] - view details for that movie.
   --
 
 ### Details Page
 
-This should show all details **including ALL genres** for the selected movie, including title, description, and the image, too! Use Sagas and Redux to handle these requests and data.
+[x] - SHOW movie details.
+[] - SHOW:
+-title,
+-image,
+-genres,
+-description for selected movie.
 
-- TODO: The details page should have a `Back to List` button, which should bring the user to the Home/List Page
+[] - Use Sagas and Redux to: - handle requests && data.
+
+[x] -`Back to List` button
 
 > Base functionality does not require the movie details to load correctly after refresh of the browser.
 
