@@ -25,19 +25,18 @@ function MovieList() {
         
     }
 
-    // click to addMovie
-    const addButton = () => {
-        if (confirm('proceed to add your favorite movie?') == true) {
-            history.push('/addMovie');
-        }
-    }
+    // // click to addMovie
+    // const addButton = () => {
+    //     if (confirm('proceed to add your favorite movie?') == true) {
+    //         history.push('/addMovie');
+    //     }
+    // }
 
     return (
         <main>
+            <AddMovie />
+
             <h1>MovieList</h1>
-            <div>
-                <button onClick={() => {addButton()}}>Add Movie</button>
-            </div>
             <section className="movies">
                 {movies.map(movie => {
                     return (
@@ -48,6 +47,7 @@ function MovieList() {
                     );
                 })}
             </section>
+
         </main>
 
     );
