@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useHistory } from 'react-router-dom';
+import AddMovie from '../AddMovie/AddMovie';
 
 import './MovieList.css'
 
@@ -17,17 +18,26 @@ function MovieList() {
     const history = useHistory();
 
 
-    // click to details page
+    // click to details 
     const handleClick = (movie) => {
         alert(`you clicked ${movie.title}!`);
         history.push('/details');
         
     }
 
+    // click to addMovie
+    const addButton = () => {
+        if (confirm('proceed to add your favorite movie?') == true) {
+            history.push('/addMovie');
+        }
+    }
+
     return (
         <main>
-            {/* {JSON.stringify(movies)} */}
             <h1>MovieList</h1>
+            <div>
+                <button onClick={() => {addButton()}}>Add Movie</button>
+            </div>
             <section className="movies">
                 {movies.map(movie => {
                     return (
