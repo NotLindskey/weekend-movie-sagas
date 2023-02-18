@@ -8,19 +8,10 @@ import MovieList from '../MovieList/MovieList';
 // import from Details
 import Details from '../Details/Details';
 
-// import from MovieDetails
-// import MovieDetails from '../MovieDetails/MovieDetails';
-
 function App() {
 	return (
 		<Router>
 			<div className="App">
-				{/* <nav>
-					<li>
-						<Link to="/details">Details</Link>
-					</li>
-				</nav> */}
-
 				<h1>The Movies Saga!</h1>
 				{/* Home page */}
 				<Route path="/" exact>
@@ -30,10 +21,10 @@ function App() {
 				<Route path="/details" exact>
 					<Details />
 				</Route>
-				{/* <Route path="/details/:id" exact>
-					<Details />
-				</Route> */}
 				{/* Add Movie page */}
+				<Route path="/addMovie" exact>
+					<AddMovie />
+				</Route>
 			</div>
 		</Router>
 	);
