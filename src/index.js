@@ -52,7 +52,14 @@ const genres = (state = [], action) => {
 };
 
 // used to store selected movie
-const movieDetails = (state = {}, action) => {};
+const movieDetails = (state = {}, action) => {
+	switch (action.type) {
+		case 'SET_DETAILS':
+			return action.payload;
+		default:
+			return state;
+	}
+};
 
 // Create one store that all components can use
 const storeInstance = createStore(
