@@ -1,11 +1,12 @@
 import React from 'react';
-
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom';
 import { useState } from 'react'
 
 function AddMovie() {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     // A // add title
     const [title, setTitle] = useState('');
@@ -33,6 +34,12 @@ function AddMovie() {
     // event
     const handleDescriptionChange = (event) => {
         setDescription(event.target.value);
+    }
+
+    // E // go back to MovieList
+    const backHandleClick = (event) => {
+        console.log('something');
+        history.push('/');
     }
 
     // on submit > event
@@ -78,12 +85,17 @@ function AddMovie() {
 
                 {/* /description */}
                 <input 
-                    value={description} onChange={handleDescriptionChange} type="text" id="description" name="description" placeholder='descripton Here'>
+                    value={description} onChange={handleDescriptionChange} type="text" id="description" name="description" placeholder='description Here'>
                 </input>
 
                 {/* submit */}
                 <button type="submit">Enter your movie!</button>
             </form>
+
+            <br />
+            <br />
+
+            <button onClick={() => backHandleClick()}>Go Back</button>
         </div>
     )
 }
