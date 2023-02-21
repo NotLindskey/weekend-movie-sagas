@@ -2,13 +2,8 @@ import React from 'react';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
-// import from MovieList
 import MovieList from '../MovieList/MovieList';
-
-// import from Details
 import Details from '../Details/Details';
-
-// import from AddMovie />
 import AddMovie from '../AddMovie/AddMovie';
 
 function App() {
@@ -17,15 +12,15 @@ function App() {
 			<div className="App">
 				<h1>The Movies Saga!</h1>
 				{/* Home page */}
-				<Route path="/" exact>
+				<Route exact path="/">
 					<MovieList />
 				</Route>
 				{/* Details page */}
-				<Route path="/details" exact>
+				<Route exact path="/Details">
 					<Details />
 				</Route>
 				{/* Add Movie page */}
-				<Route path="/addMovie" exact>
+				<Route exact path="/AddMovie">
 					<AddMovie />
 				</Route>
 			</div>
