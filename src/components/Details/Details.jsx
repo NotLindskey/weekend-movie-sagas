@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from 'react';
+import '@fontsource/roboto';
 
 function details() {
     const history = useHistory();
@@ -10,7 +11,7 @@ function details() {
     const movie = useSelector(store => store.movies);
 
     useEffect(() => {
-        dispatch({ type: 'FETCH_MOVIES' });
+        dispatch({ type: 'FETCH_THIS_MOVIE', payload: 3});
     }, [])
 
     const sendToAddMovie = () => {
@@ -26,7 +27,6 @@ function details() {
 
     return (
         <div>
-            {/* {JSON.stringify(movie)} */}
             <section className='movieContainer'>
                 <div className="movieDetails"> 
                     {movie.map((movie) => (
@@ -36,10 +36,9 @@ function details() {
                             <p>{movie.description}</p>
                         </div>
         ))}
-
             <img src={movie.poster} alt={movie.title}></img> 
             </div>
-        </section>
+            </section>
 
             {/* button to send back to MovieList/ */}
             <div className="backButton">
