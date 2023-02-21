@@ -31,7 +31,7 @@ function AddMovie() {
     // D // add description
     const [description, setDescription] = useState('');
     // event
-    const handleDescriptonChange = (event) => {
+    const handleDescriptionChange = (event) => {
         setDescription(event.target.value);
     }
 
@@ -73,12 +73,12 @@ function AddMovie() {
 
                 {/* /genre */}
                 <input 
-                    value={genre} onChange={handleGenreChange} type="text" id="genre" name="genre" placeholder='genre Here'>
+                    value={genre} onChange={handleGenreChange} type="dropdown" id="genre" name="genre" placeholder='genre Here'>
                 </input>
 
-                {/* /descripton */}
+                {/* /description */}
                 <input 
-                    value={description} onChange={handleDescriptonChange} type="text" id="descripton" name="descripton" placeholder='descripton Here'>
+                    value={description} onChange={handleDescriptionChange} type="text" id="description" name="description" placeholder='descripton Here'>
                 </input>
 
                 {/* submit */}
