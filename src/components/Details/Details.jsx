@@ -3,9 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from 'react';
 
-
 function details() {
-
     const history = useHistory();
     const dispatch = useDispatch();
     
@@ -14,6 +12,11 @@ function details() {
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, [])
+
+    const sendToAddMovie = () => {
+        console.log('to addMovie');
+        history.push('/addMovie')
+    }
 
     // send back to MovieList;
     const sendToHome = () => {
